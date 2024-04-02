@@ -79,7 +79,6 @@ class RoleService extends Service {
       .split(",");
     for (let item of newMenuId) {
       const res = await app.mysql.select("menu", { where: { id: item } });
-      console.log(res, "res");
       if (res.length > 0) {
         res[0].children = [];
         newMenu.push(res[0]);

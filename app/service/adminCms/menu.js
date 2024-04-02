@@ -32,6 +32,7 @@ class MenuService extends Service {
       orderNum: data.orderNum,
       visible: data.visible,
       status: data.status,
+      path: data.path,
     };
     const res = await app.mysql.update("menu", newData, {
       where: { id: data.id },
